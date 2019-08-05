@@ -10,6 +10,7 @@ app = Flask(__name__)
 app.config['JSON_SORT_KEYS'] = False
 exe_path = "/home/ubuntu/flask_selenium/geckodriver"
 cap = DesiredCapabilities().FIREFOX
+cap["marionette"] = False
 driver = webdriver.Firefox(capabilities=cap, executable_path=exe_path)
 driver_1 = webdriver.Firefox(capabilities=cap, executable_path=exe_path)
 driver_2 = webdriver.Firefox(capabilities=cap, executable_path=exe_path)
