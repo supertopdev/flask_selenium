@@ -6,7 +6,7 @@ import sys
 
 app = Flask(__name__)
 app.config['JSON_SORT_KEYS'] = False
-exe_path = "/home/golden/work/python/idese/geckodriver"
+exe_path = "/home/ubuntu/flask_selenium/geckodriver"
 driver = webdriver.Firefox(executable_path=exe_path)
 driver_1 = webdriver.Firefox(executable_path=exe_path)
 driver_2 = webdriver.Firefox(executable_path=exe_path)
