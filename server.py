@@ -1,5 +1,7 @@
 from flask import Flask, jsonify, make_response
 from selenium import webdriver
+from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
+
 import random
 import time
 import sys
@@ -7,9 +9,10 @@ import sys
 app = Flask(__name__)
 app.config['JSON_SORT_KEYS'] = False
 exe_path = "/home/ubuntu/flask_selenium/geckodriver"
-driver = webdriver.Firefox(executable_path=exe_path)
-driver_1 = webdriver.Firefox(executable_path=exe_path)
-driver_2 = webdriver.Firefox(executable_path=exe_path)
+cap = DesiredCapabilities().FIREFOX
+driver = webdriver.Firefox(capabilities=cap, executable_path=exe_path)
+driver_1 = webdriver.Firefox(capabilities=cap, executable_path=exe_path)
+driver_2 = webdriver.Firefox(capabilities=cap, executable_path=exe_path)
 
 
 @app.route('/companyinfo/<company_name>/')
